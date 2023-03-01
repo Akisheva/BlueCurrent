@@ -1,0 +1,104 @@
+@import "../../../global-scss/fonts.scss";
+@import "../../../global-scss/global_style.scss";
+@import "../../../global-scss/vars.scss";
+
+.slide2__form {
+    z-index: 1;
+    display: flex;
+    margin:  18.438rem 6.9rem 6.5rem 0;
+    .radio {
+        z-index: 2;
+        &:last-child {
+            margin-left: 9.4rem;
+        }
+    }
+    
+    .radio-label {
+        margin-left: 18px;
+        color: #093550;
+        font-weight: bold;
+        font-size: 1.125rem;
+        cursor: pointer;
+    }
+    .radio-input {
+        visibility: hidden;
+    }
+    .custom-radio {
+        position: relative;
+        display: inline-block;
+        top: 0.6rem;
+        left: -1rem;
+        border-radius: 50%;
+        border: solid 1px #eef7ff;
+        width: 2.5rem;
+        height: 2.5rem;
+        &::before {
+            content: "\00D7"; 
+            position: absolute; 
+            top: 20%;
+            left: 36%;
+            // transform: translate(-50%, -50%);
+            width: 1rem; 
+            height: 1rem; 
+            color:#eef7ff;
+        }
+        &::after {
+            content: ""; 
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1rem; 
+            height: 1rem; 
+            background-color: #eef7ff;
+            color: $accent-color;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+    .radio-input:checked + span {
+        background-color: #eef7ff;
+        &::before {
+        content: "";
+        position: absolute;
+        z-index: 4;
+        top: 32%;
+        left: 45%;
+        width: 6px;
+        height: 12px;
+        border: solid $accent-color;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        }
+    }
+    .radio-input:checked + span:after {
+    opacity: 1;
+    } 
+    @media screen and (max-width: 767px) {
+        margin:  18.438rem 0rem 6.5rem;
+    }
+    @media screen and (max-width: 575px) {
+        margin-top: 18rem;
+        .radio:last-child{ 
+            margin-left: 3.4rem;
+            padding-right: 4.5rem
+        }
+    }
+    @media screen and (max-width: 479px) {
+        margin-top: 10rem;
+        margin-bottom: 1.5rem;
+        .radio-label {
+            font-size: 1rem;
+        }
+        .radio {
+            margin-left: 2rem;
+        }
+        .radio:last-child{ 
+            padding-right: 0rem
+        }
+        .custom-radio {
+            top: -0.5rem;
+            left: -2rem;
+        }
+    }
+}

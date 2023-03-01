@@ -1,0 +1,47 @@
+@import "../../global-scss/global_style.scss";
+@import "../../global-scss/vars.scss";
+
+.pagination-progress {
+    position: absolute;
+    left: 2.5rem;
+    top: -0.5rem;
+    width: 17.875rem;
+    height: 1rem;
+    border-radius: 9.5px;
+    background-color: #fff;
+}
+.progress-line {
+    width: 5.563rem;
+    height: 1rem;
+    border-radius: 9.5px;
+    background-color: $accent-color;
+}
+.circle {
+    position: absolute;
+    left: 3.875rem;
+    top: -0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.813rem 0.625rem 0.75rem;
+    border-radius: 50%;
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 0.813rem;
+    font-weight: bold;
+}
+@media screen and (max-width: 479px) {
+    .pagination-progress {
+        width: 12.875rem;
+    }
+    .progress-line {
+        width: 2.563rem;
+    }
+    .circle {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.613rem 0 0.55rem;
+        text-align: center;
+        left: 1.9rem;
+        top: -0.55rem;
+    }
+}

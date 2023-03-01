@@ -1,0 +1,161 @@
+@import "../../global-scss/global_style.scss";
+@import "../../global-scss/vars.scss";
+
+.slide {
+    position: relative;
+    margin: 1.25rem 0 2.25rem;
+    border-radius: 10px;
+    background-color: $background-color; 
+    padding: 3.813rem 2.875rem 0 2.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    &__content {
+        margin-top: 3.437rem;
+        &-title {
+            margin: 0 0 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 300;
+            color: #2aa5ff;
+        }
+        &-subtitle {
+            margin: 0.5rem 0 0;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #093550;
+        }
+        &-item {
+            margin: 1.5rem 0 9.313rem;
+            max-width: 22.813rem;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #58727e;
+        }
+        &-field {
+            max-width: 32rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+            &-img {
+                width: 13rem;
+            }
+            &-features {
+                .features-list {
+                    margin: 2rem 0 2.063rem 0;
+                    .features-item {
+                        position: relative;
+                        color: $accent-color;
+                        padding-left: 1.625rem;
+                        margin: 0 0 0.063rem 0.563rem;
+                        font-family: FontAwesome5Pro;
+                        font-size: 1rem;
+                        > span {
+                            font-family: $main-font;
+                            font-size: 1rem;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            color: #617d8a;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top:20%;
+                            width: 6px;
+                            height: 12px;
+                            border: solid $accent-color;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+                .element {
+                    margin-bottom: 8.688rem;
+                    &__text {
+                        margin: 0 0.813rem 0.25rem 0;
+                        font-size: 1rem;
+                        font-weight: 300;
+                        color: $accent-color;
+                    }
+                    &__price {
+                        margin: 0.25rem 0 0;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: $accent-color;
+                    }
+                }    
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        padding-left: 2.5rem;
+        &__content {
+            &-item {
+            max-width: 100%;
+            margin-left: 0;
+            margin-bottom: 5rem;        
+        }
+            &-field-img {
+                max-width: 20rem;
+            }
+        }
+        flex-direction: column;
+        .slide__content-field-features .element {
+            margin-bottom: 4rem;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &__content {
+            &-item {
+            margin-bottom: 4rem;
+            }
+        }
+    }
+    @media screen and (max-width: 479px) {
+        padding: 2rem 1rem;
+        &__content {
+            &-title {
+                font-size: 0.8rem;
+            }
+            &-subtitle {
+                font-size: 1.7rem;
+            }
+            &-field {
+                justify-items: center;
+            }
+        }
+    }
+}
+.vorige-btn {
+    position: absolute;
+    cursor: pointer;
+    bottom: -1.375rem;
+    left: 2.5rem;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem 0.5rem 3.125rem;
+    border-radius: 8px;
+    border: solid 1px $accent-color;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.56;
+    color: $accent-color;
+    &::before {
+        content: "\2190";
+        position: absolute;
+        left: 1.156rem;
+        top: 25%;
+        font-family: FontAwesome5Pro;
+        font-size: 0.875rem;
+        color: #0074e8;
+    }
+    &:hover {
+        background-color: $accent-color;
+        color: #fff;
+    }
+    @media screen and (max-width: 479px) {
+        padding: 2.255rem 0rem 0.5rem 2.8rem;
+    }
+}
